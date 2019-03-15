@@ -14,16 +14,6 @@
       * list item 2
 * list item 2
 
-1. list item 1
-  1. list item 1
-  2. list item 2
-    1. list item 1
-    2. list item 2
-      1. list item 1
-      2. list item 2
-2. item 2
-
-
 **bold**
 *italic*
 ~~strike~~
@@ -31,6 +21,17 @@
 * [x] task 1
 * [ ] task 2
 * [ ] task 3
+
+1. list item 1
+  1. list item 1
+  2. list item 2
+    1. list item 1
+    2. list item 2
+      1. list item 1
+      2. list item 2
+        * list item 1
+        * list item 2
+2. item 2
 
 ```
 this is code block
