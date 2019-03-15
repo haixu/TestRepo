@@ -37,4 +37,4 @@ this is code block
 | cell1  | cell 2 |
 | cell 3 | cell 4 |
 
-[hyperlink to google](www.google.com)
+[hyperlink to google](https://www.google.com)
