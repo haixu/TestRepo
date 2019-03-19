@@ -3,7 +3,7 @@ class Card:
     def __init__(self,value,suite):
         self.__value = value
         self.__suite = suite
-        self.__shown = false
+        self.__shown = False
 
     def getAll(self):
         return (self.__value,self.__suite)
@@ -15,7 +15,7 @@ class Card:
         return (self.__suite)
 
     def display(self):
-        self.__shown = true
+        self.__shown = True
         print("(",end="")
         self.displayValue()
         print(",",end="")
