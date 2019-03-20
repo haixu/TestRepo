@@ -4,12 +4,15 @@ class Player:
         self.__score = 0
         self.__totalCards = 0
         self.__hand = []
+        self.__totalPoint = 0
 
-    def addCard(self,card):
-        self.__hand.append(card)
-
-    def hit(self):
-        pass
+    def hit(self,card):
+        if self.__totalCards <= 4:
+            self.__hand.append(card)
+            self.__totalCards += 1
+            self.__totalPoint += card.getValue()
+        else:
+            return
 
     def stand(self):
         pass
@@ -20,9 +23,10 @@ class Player:
     def surrender(self):
         pass
 
-class House(Player):
-    def __init__(self):
-        super.__init__(self)
+    def showHand(self):
+        for i in range(self.__totalCards):
+            self.__hand[i].display()
+        print("\nHand Value = %d" %self.__totalPoint)
 
 if __name__ == "__main__":
     p = Player()

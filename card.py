@@ -1,18 +1,36 @@
 
 class Card:
     def __init__(self,value,suite):
-        self.__value = value
         self.__suite = suite
         self.__shown = False
+        self.__discard = False
+        if value > 10:
+            self.__value = 10
+        else:
+            self.__value = value
+        if value == 11:
+            self.__face = "J"
+        elif value == 12:
+            self.__face = "Q"
+        elif value == 13:
+            self.__face = "K"
+        else:
+            self.__face = str(value)
+
+    def discard(self):
+        self.__discard = True
 
     def getAll(self):
-        return (self.__value,self.__suite)
+        return (self.__face,self.__suite)
 
     def getValue(self):
         return (self.__value)
 
     def getSuite(self):
         return (self.__suite)
+
+    def getFace(self):
+        return (self.__face)
 
     def display(self):
         self.__shown = True
@@ -22,17 +40,11 @@ class Card:
         self.displaySuite()
         print(")",end="")
 
+    def displayFace(self):
+        print(self.__face,end="")
+        
     def displayValue(self):
-        if self.__value == 1:
-            print("A",end="")
-        elif self.__value == 11:
-            print("J",end="")
-        elif self.__value == 12:
-            print("Q",end="")
-        elif self.__value == 13:
-            print("K",end="")
-        else:
-            print(self.__value,end="")
+        print(self.__value,end="")
 
     def displaySuite(self):
         print(self.__suite,end="")
