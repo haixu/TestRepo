@@ -1,6 +1,7 @@
 from player import Player
 from deck import Deck
 
+
 class Game:
     def __init__(self):
         self.__dealer = Player()
@@ -20,6 +21,7 @@ class Game:
         self.__dealer.showHand()
         print("Player:")
         self.__player.showHand()
+
 
 if __name__ == "__main__":
     game = Game()

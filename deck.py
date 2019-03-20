@@ -2,13 +2,15 @@ from datetime import datetime
 import random
 from card import Card
 
+
 class Deck:
-    __suite=["heart","diamond","club","spade"]
-    __suiteSize=13
-    __deckSize=52
+    __suite = ["heart", "diamond", "club", "spade"]
+    __suiteSize = 13
+    __deckSize = 52
 
     def __init__(self):
-        self.__cards=[Card(i%Deck.__suiteSize + 1, Deck.__suite[i//Deck.__suiteSize]) for i in range(Deck.__deckSize)]
+        self.__cards = [Card(i % Deck.__suiteSize + 1, Deck.__suite[i
+                                                                    // Deck.__suiteSize]) for i in range(Deck.__deckSize)]
         self.__topCard = 0
         self.__bottomCard = Deck.__deckSize - 1
 
@@ -38,8 +40,8 @@ class Deck:
 
     def shuffle(self):
         random.seed(datetime.now())
-        for i in range(51,-1,-1):
-            index = random.randint(0,i)
+        for i in range(51, -1, -1):
+            index = random.randint(0, i)
 #            print("%d picked" % index,end=":")
 #            print("cards[%s]=" % index,end="")
 #            print(self.__cards[index].getAll(),end=";")
@@ -54,7 +56,7 @@ class Deck:
 #            print(self.__cards[index].getAll(),end=";")
 #            print("cards[%s]="%i,end="")
 #            print(self.__cards[i].getAll())
-            #input("")
+            # input("")
 
     def getTopCard(self):
         if self.__topCard <= self.__bottomCard:
@@ -70,8 +72,9 @@ class Deck:
         else:
             return
 
+
 if __name__ == "__main__":
-    d = Deck();
+    d = Deck()
     d.display()
     print("")
     d.shuffle()

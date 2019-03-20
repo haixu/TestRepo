@@ -6,7 +6,7 @@ class Player:
         self.__hand = []
         self.__totalPoint = 0
 
-    def hit(self,card):
+    def hit(self, card):
         if self.__totalCards <= 4:
             self.__hand.append(card)
             self.__totalCards += 1
@@ -26,7 +26,8 @@ class Player:
     def showHand(self):
         for i in range(self.__totalCards):
             self.__hand[i].display()
-        print("\nHand Value = %d" %self.__totalPoint)
+        print("\nHand Value = %d" % self.__totalPoint)
+
 
 if __name__ == "__main__":
     p = Player()

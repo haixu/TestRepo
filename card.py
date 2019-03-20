@@ -1,6 +1,6 @@
 
 class Card:
-    def __init__(self,value,suite):
+    def __init__(self, value, suite):
         self.__suite = suite
         self.__shown = False
         self.__discard = False
@@ -21,7 +21,7 @@ class Card:
         self.__discard = True
 
     def getAll(self):
-        return (self.__face,self.__suite)
+        return (self.__face, self.__suite)
 
     def getValue(self):
         return (self.__value)
@@ -34,26 +34,27 @@ class Card:
 
     def display(self):
         self.__shown = True
-        print("(",end="")
+        print("(", end="")
         self.displayValue()
-        print(",",end="")
+        print(",", end="")
         self.displaySuite()
-        print(")",end="")
+        print(")", end="")
 
     def displayFace(self):
-        print(self.__face,end="")
-        
+        print(self.__face, end="")
+
     def displayValue(self):
-        print(self.__value,end="")
+        print(self.__value, end="")
 
     def displaySuite(self):
-        print(self.__suite,end="")
+        print(self.__suite, end="")
+
 
 if __name__ == "__main__":
-    suite = ["Heart","Diamond","Club","Spade"]
-    cards = [Card(i%13 + 1, suite[i//13]) for i in range(52)]
+    suite = ["Heart", "Diamond", "Club", "Spade"]
+    cards = [Card(i % 13 + 1, suite[i // 13]) for i in range(52)]
     for i in range(52):
-        print("getAll(): ",cards[i].getAll())
-        print("display(): ",end="")
+        print("getAll(): ", cards[i].getAll())
+        print("display(): ", end="")
         cards[i].display()
         print("")
