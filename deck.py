@@ -9,8 +9,7 @@ class Deck:
     __deckSize = 52
 
     def __init__(self):
-        self.__cards = [Card(i % Deck.__suiteSize + 1, Deck.__suite[i
-                                                                    // Deck.__suiteSize]) for i in range(Deck.__deckSize)]
+        self.__cards = [Card(i % Deck.__suiteSize + 1, Deck.__suite[i// Deck.__suiteSize]) for i in range(Deck.__deckSize)]
         self.__topCard = 0
         self.__bottomCard = Deck.__deckSize - 1
 
@@ -58,6 +57,10 @@ class Deck:
 #            print(self.__cards[i].getAll())
             # input("")
 
+    def reset(self):
+        self.__topCard = 0
+        self.__bottomCard = Deck.__deckSize
+
     def getTopCard(self):
         if self.__topCard <= self.__bottomCard:
             self.__topCard += 1
@@ -80,3 +83,5 @@ if __name__ == "__main__":
     d.shuffle()
     d.display()
     print("")
+    d.reshuffle()
+    d.display()

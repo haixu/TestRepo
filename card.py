@@ -14,6 +14,8 @@ class Card:
             self.__face = "Q"
         elif value == 13:
             self.__face = "K"
+        elif value == 1:
+            self.__face = "A"
         else:
             self.__face = str(value)
 
@@ -35,7 +37,7 @@ class Card:
     def display(self):
         self.__shown = True
         print("(", end="")
-        self.displayValue()
+        self.displayFace()
         print(",", end="")
         self.displaySuite()
         print(")", end="")
