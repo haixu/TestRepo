@@ -25,7 +25,7 @@ class Game:
         self.__player.hit(self.__deck.getTopCard())
         self.status()
 
-    def update(self,action):
+    def update(self, action):
         if self.__playerTurn == 1:
             if action == "h" and self.__player.getTotalCards() < 5:
                 self.__player.hit(self.__deck.getTopCard())
@@ -60,7 +60,8 @@ class Game:
             self.showScore()
 
     def showScore(self):
-        print("Dealer Score:%d\tPlayer Score:%d"%(self.__dealer.getScore(),self.__player.getScore()))
+        print("Dealer Score:%d\tPlayer Score:%d" %
+              (self.__dealer.getScore(), self.__player.getScore()))
 
     def end(self):
         return (self.__end)
@@ -82,8 +83,8 @@ if __name__ == "__main__":
                 action = input("What Do You Want To Do (hit/stand)?")
             game.update(action)
         yesno = input("Do You Want To Play Again (yes/no)?")
-        if yesno == "y":
+        if yesno == "n":
+            again = False
+        else:
             again = True
             game.start()
-        else:
-            again = False

@@ -11,10 +11,13 @@ class Player:
         self.__hand = []
 
     def hit(self, card):
-        if self.__totalCards <5 and (not self.__stand):
+        if self.__totalCards < 5 and (not self.__stand):
             self.__hand.append(card)
             self.__totalCards += 1
             self.__totalPoint += card.getValue()
+            if self.__totalPoint <= 21 and card.getValue() == 1:
+                if (self.__totalPoint + 10) <= 21:
+                    self.__totalPoint += 10
         else:
             self.__stand = True
 
@@ -46,6 +49,7 @@ class Player:
 
     def getScore(self):
         return(self.__score)
+
 
 if __name__ == "__main__":
     p = Player()
