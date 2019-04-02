@@ -1,0 +1,34 @@
+<MenuLabel@Label>:
+    size_hint_y: None
+    height: 50
+    group: 'menu'
+
+<MenuDropDown@DropDown>:
+
+<MenuBar@BoxLayout>:
+    pos: 'top', 'left'
+    orientation: 'horizontal'
+    MenuDropDown:
+        id: _menu1
+        MenuLabel:
+            text: 'Menu 1'
+        MenuLabel:
+            text: 'Menu 2'
+        MenuLabel:
+            text: 'Menu 3'
+    MenuDropDown:
+        id: _menu2
+        MenuLabel:
+            text: 'Menu 1'
+        MenuLabel:
+            text: 'Menu 2'
+        MenuLabel:
+            text: 'Menu 3'
+    MenuDropDown:
+        id: _menu3
+        MenuLabel:
+            text: 'Menu 1'
+        MenuLabel:
+            text: 'Menu 2'
+        MenuLabel:
+            text: 'Menu 3'
